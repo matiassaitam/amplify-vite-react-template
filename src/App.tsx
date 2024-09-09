@@ -26,7 +26,7 @@ function App() {
 
   return (
     <Authenticator>
-      {({ signOut }) => (
+      {({ signOut, user }) => (
         <main>
           <h1>My todos</h1>
           <button onClick={createTodo}>+ new</button>
@@ -38,6 +38,7 @@ function App() {
             ))}
           </ul>
           <div>
+          <h1>{user?.signInDetails?.loginId}'s todos</h1>
             🥳 App successfully hosted. Try creating a new todo.
             <br />
             <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
